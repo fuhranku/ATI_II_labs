@@ -12,15 +12,13 @@
 */
 
 Route::get('/', function () {
-    return "Home";
+    return view('Welcome');
 });
 
+Route::get('/create', function () {
+    return view('modal');
+});
 
-Route::get('/users', 'UserController@index');
+Route::get('create', 'FormController@create')->name('create.create');
 
-Route::get('users/{id}', 'UserController@show')
-    ->where('id','[0-9]+');
-
-Route::get('/users/new', 'UserController@create');
-
-Route::get('/welcome/{name}/{nickname?}', 'WelcomeUserController');
+Route::post('create','FormController@store')->name('create.store');
