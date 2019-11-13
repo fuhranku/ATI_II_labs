@@ -10,19 +10,22 @@ class FormController extends Controller
 {
     public function create()
     {
-        return view('create');
+        $currentPage = 'create';
+        return view('create', compact('currentPage'));
     }
 
     public function update()
     {
+        $currentPage = 'update';
         $users = \App\Form::all();
-        return view('update',compact('users'));
+        return view('update',compact('users','currentPage'));
     }
 
     public function read()
     {
+        $currentPage = 'read';
         $users = \App\Form::all();
-        return view('read',compact('users'));
+        return view('read',compact('users','currentPage'));
     }
 
     public function delete()
@@ -32,8 +35,9 @@ class FormController extends Controller
 
     public function getdelete()
     {
+        $currentPage = 'delete';
         $users = \App\Form::all();
-        return view('delete',compact('users'));
+        return view('delete',compact('users','currentPage'));
     }
 
     public function store(Request $request)

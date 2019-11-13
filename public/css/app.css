@@ -35,7 +35,10 @@ body > .container {
   font-size: 80%;
 }
 
-.create, .read, .update, .delete{
+.create{
+  transform: scale(0.8);
+}
+.read, .update, .delete{
   transform: scale(0.9);
 }
 

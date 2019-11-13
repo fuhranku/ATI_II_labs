@@ -26,16 +26,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('create') }}">Create <span class="sr-only">(current)</span></a>
+                <li class="{{ $currentPage=='create' ? 'nav-item active' : 'nav-item' }}">
+                    <a class="nav-link" href="{{ url('create') }}">Create </span></a>
                 </li>
-                <li class="nav-item">
+                <li class="{{ $currentPage=='update' ? 'nav-item active' : 'nav-item' }}">
                     <a class="nav-link" href="{{ url('update') }}">Update</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{ $currentPage=='read' ? 'nav-item active' : 'nav-item' }}">
                         <a class="nav-link" href="{{ url('read') }}">Read</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{ $currentPage=='delete' ? 'nav-item active' : 'nav-item' }}">
                         <a class="nav-link" href="{{ url('delete') }}">Delete</a>
                 </li>
             </ul>
