@@ -35,10 +35,14 @@ body > .container {
   font-size: 80%;
 }
 
-.create{
-  transform: scale(0.8);
+.create, .read, .update, .delete{
+  transform: scale(0.9);
 }
 
 li{
   list-style:none;
+}
+
+.content-table{
+  padding-top: 80px;
 }

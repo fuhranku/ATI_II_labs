@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+
 class FormController extends Controller
 {
     public function create()
@@ -14,17 +15,25 @@ class FormController extends Controller
 
     public function update()
     {
-
+        $users = \App\Form::all();
+        return view('update',compact('users'));
     }
 
     public function read()
     {
-    
+        $users = \App\Form::all();
+        return view('read',compact('users'));
     }
 
     public function delete()
     {
 
+    }
+
+    public function getdelete()
+    {
+        $users = \App\Form::all();
+        return view('delete',compact('users'));
     }
 
     public function store(Request $request)

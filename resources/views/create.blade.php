@@ -12,7 +12,6 @@
                 @yield('modal')
             @endif
         @endif
-
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
                 <h1 class="display-4 text-center">Create</h1>

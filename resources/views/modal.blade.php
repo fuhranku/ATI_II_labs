@@ -3,7 +3,7 @@
 @section('modal')
 
 <!--Modal: modalCookie-->
-<div class="text-center alert alert-success ">
+<div class="text-center alert alert-success" id="successmodal">
     Registro creado exitosamente.
 </div>
 <!--Modal: modalCookie-->
