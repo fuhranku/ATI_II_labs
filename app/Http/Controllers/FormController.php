@@ -49,13 +49,15 @@ class FormController extends Controller
             'Cedula' => 'required|numeric|digits:8',
             'Genero' => 'required',
         ]);
+        $currentPage = 'create';
         if ($validatedData->fails()){
             $submitState = 0;
-            return view('modal',compact('submitState'))->withErrors($validatedData);
+            return view('modal',compact('submitState','currentPage'))->withErrors($validatedData);
         }
         
         \App\Form::create($request->all());
         $submitState = 1;
-        return view('modal',compact('submitState'));
+        
+        return view('modal',compact('submitState','currentPage'));
     }
 }
