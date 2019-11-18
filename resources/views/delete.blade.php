@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         @foreach ($users as $user)
-        <tr>
+        <tr id="user-id-{{$user->id}}">
         <th scope="row">{{$user->id}}</th>
         <td>{{$user->Nombre}}</td>
         <td>{{$user->Apellido}}</td>
@@ -30,7 +30,7 @@
                 Femenino
             @endif
         </td>
-        <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+        <td><button type="button" class="btn btn-danger delete-btn " data-id = "{{$user->id}}" data-token="{{csrf_token()}}">Eliminar</button></td>
         </tr>
         @endforeach
     </tbody>

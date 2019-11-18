@@ -28,9 +28,12 @@ class FormController extends Controller
         return view('read',compact('users','currentPage'));
     }
 
-    public function delete()
-    {
+    public function delete($id)
+    {        
+        //$deletedRows = App\Form::where('id', $id)->delete();
 
+        \App\Form::find($id)->delete($id);
+        return json("arre loco");
     }
 
     public function getdelete()
