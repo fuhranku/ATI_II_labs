@@ -14,13 +14,12 @@ $('body').on('click', '.delete-btn', function () {
 
   $.ajax({
       type: "DELETE",
-      url: "http://localhost:80/public/delete/" + user_id,
+      url: "delete/" + user_id,
       data:{"id": user_id,
             "_token": token},
       success: function (data) {
-
           console.log("probando");
-          //$("#user-id-" + user_id).remove();
+          $("#user-id-" + user_id).remove();
       },
       error: function (data) {
           console.log('Error:', data);

@@ -33,7 +33,10 @@ class FormController extends Controller
         //$deletedRows = App\Form::where('id', $id)->delete();
 
         \App\Form::find($id)->delete($id);
-        return json("arre loco");
+        // return json("arre loco");
+        $currentPage = 'read';
+        $users = \App\Form::all();
+        return view('delete',compact('users','currentPage'));
     }
 
     public function getdelete()
