@@ -1,4 +1,6 @@
-@extends('layout')    
+@extends('layout')   
+
+@section('title','Update')
 
 @section('content')
 <div class="row content-table update">

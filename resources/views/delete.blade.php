@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title','Delete')
+
 @section('content')
 <div class="row content-table delete">
         <div class="col-sm-10 offset-sm-1">

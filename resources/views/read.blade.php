@@ -1,5 +1,6 @@
 @extends('layout')
 
+@section('title','Read')
 
 @section('content')
 <div class="row content-table read">
