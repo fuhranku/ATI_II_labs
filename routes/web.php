@@ -40,7 +40,4 @@ Route::get('read', 'FormController@read')->name('read.update');
 // Delete
 Route::get('delete', 'FormController@getdelete')->name('delete.getdelete');
 
-//Route::post('delete/{id}', 'FormController@delete')->name('delete.delete');
 Route::delete('delete/{id}','FormController@delete')->name('delete.delete');
-
-//Route::resource('ajax-delete', 'FormController');
