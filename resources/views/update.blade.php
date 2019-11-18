@@ -3,6 +3,17 @@
 @section('title','Update')
 
 @section('content')
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
+
 <div class="row content-table update">
         <div class="col-sm-10 offset-sm-1">
 <table class="table">
@@ -32,7 +43,7 @@
                 Femenino
             @endif
         </td>
-        <td><button type="button" class="btn btn-warning">Editar</button></td>
+        <td><button type="button" class="btn btn-warning edit-btn">Editar</button></td>
         </tr>
         @endforeach
     </tbody>

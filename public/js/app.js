@@ -26,3 +26,31 @@ $('body').on('click', '.delete-btn', function () {
       }
   });
 });
+
+$('body').on('click', '.edit-btn', function () {
+
+  $("#modal-bg").css('display', 'block');
+  $("#myModal").css('display','block');
+
+
+  /*
+  $("body").click(function() {
+
+    if($('#myModal').css('display') == 'block'){
+  
+      
+        $("#myModal").css('display','none');
+        $("#modal-bg").css('display', 'none');
+       
+    }
+  });
+  */
+
+
+});
+
+$('body').on('click', '.close', function () {
+  $("#myModal").css('display','none');
+  $("#modal-bg").css('display', 'none');
+});  
+
