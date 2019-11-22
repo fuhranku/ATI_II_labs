@@ -189,7 +189,7 @@ return [
     */
 
     'aliases' => [
-
+        'Requesting' => Illuminate\Support\Facades\Request::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

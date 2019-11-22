@@ -16,7 +16,7 @@
                 @endif
             @endif
             <div class="info-form">
-                <form method="post" action="{{ route('create.store')}}" class="form-inlin justify-content-center text-left">
+                <form method="post" action="{{ route('update.update')}}" class="form-inlin justify-content-center text-left">
                     @csrf
                     <div class="form-group">
                         <label for="Nombre">Nombre:</label>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Genero">Género:</label>
-                        <select name="Genero" class="form-control  col-md-5" id="upt-genre" >
+                        <select name="Genero" class="form-control  col-md-5" id="upt-gender" >
                             <option value="">Selecciona tu género</option>
                             <option value="0">Masculino</option>
                             <option value="1">Femenino</option>
@@ -77,6 +77,8 @@
                             </ul>
                         @endif
                     </div>
+                      <input type="hidden" id="upt-user_id" name="id"></input>
+
                     <div class="text-center">
                         <button type="submit" class="btn btn-success ">Update</button>
                     </div>
@@ -115,11 +117,21 @@
                 Femenino
             @endif
         </td>
-        <td><button type="button" class="btn btn-warning edit-btn" data-id = "{{$user->id}}" data-token="{{csrf_token()}}">Editar</button></td>
+        <td><button type="button" class="btn btn-warning edit-btn" data-id = "{{$user}}" data-token="{{csrf_token()}}">Editar</button></td>
         </tr>
         @endforeach
     </tbody>
   </table>
 </div>
+</div>
+
+<div>
+    @if ($errors->has('Nombre'))
+      <ul class="alert alert-danger">
+        @foreach ($errors->get('Nombre') as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    @endif
 </div>
 @endsection
