@@ -5,6 +5,7 @@
 @section('content')
 
 <div id="modal-bg">
+
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -125,13 +126,23 @@
 </div>
 </div>
 
-<div>
-    @if ($errors->has('Nombre'))
-      <ul class="alert alert-danger">
-        @foreach ($errors->get('Nombre') as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    @endif
-</div>
+<script>
+      var flag = @json($flag);
+
+    if (flag == 1){
+      var user = @json($userC);
+      console.log(user);
+      $("#modal-bg").css('display', 'block');
+      $("#myModal").css('display','block');
+      // Fill form with user data
+      $("#upt-name").attr("value", user.Nombre);
+      $("#upt-lastName").attr("value", user.Apellido);
+      $("#upt-email").attr("value", user.Email);
+      $("#upt-id").attr("value", user.Cedula);
+      $("#upt-gender").val(user.Genero);
+      $("#upt-user_id").val(user.id);
+    }
+
+</script>
+
 @endsection

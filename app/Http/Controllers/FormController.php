@@ -17,16 +17,18 @@ class FormController extends Controller
 
     public function update(Request $request)
     {
+        $flag = 0;
         $users = \App\Form::all();
+        $userC = null;
         $currentPage = 'update';
         // GET
         if(Requesting::isMethod('get')){
-            return view('update',compact('users','currentPage'));
+            return view('update',compact('users','currentPage','flag','userC'));
         }
 
         // POST
         if(Requesting::isMethod('post')){
-            $user = \App\Form::find($request->input("id"));
+            $userC = \App\Form::find($request->input("id"));
             $validatedData = Validator::make($request->all(), [
                 'Nombre' => 'required|alpha|max:255',
                 'Apellido' => 'required|max:255',
@@ -35,15 +37,16 @@ class FormController extends Controller
                 'Genero' => 'required',
             ]);
             if ($validatedData->fails()){
-                return back()->withErrors($validatedData);
+                $flag = 1;
+                return view('update',compact('flag', 'users','currentPage','userC'))->withErrors($validatedData);
             }
-            
-            $user->Nombre = $request->input("Nombre");
-            $user->Apellido = $request->input("Apellido");
-            $user->Email = $request->input("Email");
-            $user->Cedula = $request->input("Cedula");
-            $user->Genero = $request->input("Genero");
-            $user->save();
+
+            $userC->Nombre = $request->input("Nombre");
+            $userC->Apellido = $request->input("Apellido");
+            $userC->Email = $request->input("Email");
+            $userC->Cedula = $request->input("Cedula");
+            $userC->Genero = $request->input("Genero");
+            $userC->save();
             return back();
         }
 
