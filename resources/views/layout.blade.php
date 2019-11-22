@@ -17,8 +17,8 @@
 
 </head>
 
-<div id="modal-bg">
-</div>
+
+
 
 <body>
 

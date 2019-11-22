@@ -32,25 +32,49 @@ $('body').on('click', '.edit-btn', function () {
   $("#modal-bg").css('display', 'block');
   $("#myModal").css('display','block');
 
+  var user_id = $(this).data("id");
+  var token = $(this).data("token");
 
-  /*
-  $("body").click(function() {
+  $.ajax({
+      type: "POST",
+      url: "update/" + user_id,
+      data:{"id": user_id,
+            "_token": token},
+      success: function (data) {
+          console.log("probando");
+          $("#user-id-" + user_id).remove();
 
-    if($('#myModal').css('display') == 'block'){
-  
-      
-        $("#myModal").css('display','none');
-        $("#modal-bg").css('display', 'none');
-       
-    }
+
+      },
+      error: function (data) {
+          console.log('Error:', data);
+      }
   });
-  */
 
+  $("#upt-name").attr("value", "Frank");
 
 });
+
+/*
+
+$("body").click(function() {
+
+  if($('#myModal').css('display') == 'block'){
+        
+    console.log( $('#myModal').css('display') );
+    console.log("arre loco ");
+
+      $("#myModal").css('display','none');
+      $("#modal-bg").css('display', 'none');
+
+      console.log( $('#myModal').css('display') );
+     
+  }
+});
+*/
+
 
 $('body').on('click', '.close', function () {
   $("#myModal").css('display','none');
   $("#modal-bg").css('display', 'none');
 });  
-

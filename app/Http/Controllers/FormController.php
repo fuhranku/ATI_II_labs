@@ -16,6 +16,12 @@ class FormController extends Controller
 
     public function update()
     {
+        if(Request::isMethod('post')){
+
+
+        }
+
+        
         $currentPage = 'update';
         $users = \App\Form::all();
         return view('update',compact('users','currentPage'));

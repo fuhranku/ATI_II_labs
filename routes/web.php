@@ -32,7 +32,7 @@ Route::get('create', 'FormController@create')->name('create.create');
 Route::post('create','FormController@store')->name('create.store');
 
 // Update
-Route::get('update', 'FormController@update')->name('update.update');
+Route::any('update', 'FormController@update')->name('update.update');
 
 // Read
 Route::get('read', 'FormController@read')->name('read.update');
