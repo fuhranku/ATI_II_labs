@@ -10,7 +10,7 @@ $('body').on('click', '.delete-btn', function () {
   console.log("user id: " + user_id);
   console.log("user token: " + token);
 
-  confirm("Are You sure want to delete !");
+  confirm("Are you sure that do you want to delete?");
 
   $.ajax({
       type: "DELETE",

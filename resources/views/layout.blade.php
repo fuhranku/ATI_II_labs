@@ -33,16 +33,29 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="{{ $currentPage=='create' ? 'nav-item active' : 'nav-item' }}">
-                    <a class="nav-link" href="{{ url('create') }}">Create </span></a>
+                    <a class="nav-link" href="{{ url('create') }}">Crear </span></a>
                 </li>
                 <li class="{{ $currentPage=='update' ? 'nav-item active' : 'nav-item' }}">
-                    <a class="nav-link" href="{{ url('update') }}">Update</a>
+                    <a class="nav-link" href="{{ url('update') }}">Actualizar</a>
                 </li>
                 <li class="{{ $currentPage=='read' ? 'nav-item active' : 'nav-item' }}">
-                        <a class="nav-link" href="{{ url('read') }}">Read</a>
+                        <a class="nav-link" href="{{ url('read') }}">Leer</a>
                 </li>
                 <li class="{{ $currentPage=='delete' ? 'nav-item active' : 'nav-item' }}">
-                        <a class="nav-link" href="{{ url('delete') }}">Delete</a>
+                        <a class="nav-link" href="{{ url('delete') }}">Eliminar</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto mr-5">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Idioma
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item active" href="#"> <object type="image/svg+xml" data="{{asset('img/es.svg')}}" class="icon-flag"></object> Español</a>
+                            <a class="dropdown-item" href="#"> <object type="image/svg+xml" data="{{asset('img/en.svg')}}" class="icon-flag"></object> Inglés</a>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>

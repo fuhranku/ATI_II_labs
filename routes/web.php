@@ -14,18 +14,6 @@ Route::get('/', function () {
     return redirect('/create');
 });
 
-Route::get('/create', function () {
-    return view('modal');
-});
-
-Route::get('/update', function () {
-    return view('update');
-});
-
-Route::get('/read',function(){
-    return view('read');
-});
-
 // Create
 Route::get('create', 'FormController@create')->name('create.create');
 
