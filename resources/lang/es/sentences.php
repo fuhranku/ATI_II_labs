@@ -32,4 +32,5 @@
         // Update window
         'Submit-Update' => 'Actualizar',
         'Button-Edit' => 'Editar',
+        'Button-Delete' => 'Eliminar'
     ];
