@@ -1,74 +1,119 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="http://computacion.ciens.ucv.ve/escueladecomputacion/img/layout_publico/encabezado/logo_ciencias.jpg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Laboratorio 1
 
-## About Laravel
+Laboratorio 01 para el curso de ATI II. Aplicación demo para CRUD y localización en el framework PHP Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Cómo desplegar el laboratorio (MODO DESARROLLO)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Prerequisitos (WINDOWS OS)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Instalando las herramientas esenciales
+Aunque es posible desplegar la aplicación utilizando el comando
 
-## Learning Laravel
+``
+php artisan serve
+``
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Se sugiere el uso de XAMPP para montar la aplicación así como también la base de datos. Es necesario entonces:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **[XAMPP](https://www.apachefriends.org/es/index.html)**
+- **[PHP 7.x](https://windows.php.net/download/)**
+- **[Composer dependencies installer](https://getcomposer.org/download/)**
 
-## Laravel Sponsors
+#### Configurar el proyecto para despliegue de forma local
+Esto es lo que se necesita para desplega la aplicación de forma local en la máquina
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##### Clonar proyecto
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+``
+git clone https://github.com/fuhranku/ATI_II_labs.git
+``
+NOTA: Si se está trabajando con XAMPP, por ejemplo, clonar el laboratorio dentro de la carpeta **htdocs** de XAMPP
 
-## Contributing
+##### Instalar las dependencias del composer
+Siempre que se clone un nuevo proyecto de Laravel desde cero, se debe realizar la instalación de las dependencias. Esto lo que realmente instala Laravel, así como también todos los paquetes necesarios para que este funcione.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+``
+composer install
+``
 
-## Security Vulnerabilities
+##### Crear una copia del archivo .env
+Debido a que los _.env_ no se _committean_ por razones de seguridad, es necesario crear este archivo. Existe un archivo llamado _.env.example_ que es una plantilla. Haremos una copia de él para crear nuestro archivo _.env_, en donde se coloca parte de la configuración más importante de Laravel.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+``
+cp .env.example .env
+``
 
-## License
+##### Generar una llave de encriptamiento para la aplicación
+Laravel requiere dicha llave para el correcto y seguro funcionamiento de distintos aspectos, por ejemplo, cookies, hashes de contraseñas, etc. Utilizaremos la terminal de Laravel para crear dicha llave **solo despues de tener el archivo de configuración .env**
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+``
+php artisan key:generate
+``
+
+Si ahora se accede al archivo .env, ahora estará una larga cadena aleatoria de caracteres en el campo APP_KEY.
+
+##### Crear una DB para la aplicación
+Encender XAMPP, luego **Apache** y **MySQL** después ir a
+
+``
+localhost/phpmyadmin
+``
+y crear una base de datos para el proyecto a través de la simple interfaz de phpmyadmin. Como requerimiento de este equipo desarrollador, se decidió que la base de datos se llame **lab01**.
+
+##### En el archivo .env, añadir la información de la base de datos para permitir que Laravel se conecte con la base de datos
+
+Queremos que Laravel se conecte con la base de datos creada previamente. Para hacer esto, debemos añadir los credenciales de conexión en el archivo .env en los campos DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME y DB_PASSWORD para que coincidan con los de la BD creada. 
+
+Usualmente la siguiente configuración debería funcionar:
+
+``
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=lab01
+DB_USERNAME=root
+DB_PASSWORD=
+``
+
+Nota: Verificar el puerto que utiliza XAMPP para MySQL, por defecto es el 3306.
+
+##### Migrar el modelo de Eloquent a la base de datos
+Ahora se debe realizar la migración a la base de datos.
+
+``
+php artisan migrate
+``
+
+Es posible que este comando no funcione ya que el nombre de la tabla es demasiado extensa. Corregir como sigue
+
+###### Corregir el error por longitud de nombre de BD
+Ir al archivo AppServiceProvider.php dentro del proyecto y colocar el siguiente código:
+
+``
+use Illuminate\Support\Facades\Schema;
+
+    public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
+``
+
+Esto debería ser suficiente. Realizar nuevamente el comando de migrate para completar el proceso de migración.
+Se sugiere mirar la base de datos dentro de phpmyadmin para verificar que los modelos del Eloquent que posee la aplicación han sido migrados exitosamente.
+
+### Correr el proyecto
+Encender **Apache** y **MySQL** desde XAMPP. Luego, simplement visitar
+
+``
+localhost/laboratorio01/public
+``
+
+## Autores
+- **Frank Ponte** - Trabajo Inicial/Desarrollador - [fuhranku](https://github.com/fuhranku)
+- **José Enrique Tirado** - Desarrollador - [jet29](https://github.com/jet29)
+
+## Licencia
+
+_The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT)._
