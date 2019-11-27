@@ -146,6 +146,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'Nombre' => 'nombre',
+        'Apellido' => 'apellido',
+        'Cedula' => 'cédula',
+        'Genero' => 'género'
+    ],
 
 ];
