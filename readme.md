@@ -1,4 +1,4 @@
-<p align="center"><img src="http://computacion.ciens.ucv.ve/escueladecomputacion/img/layout_publico/encabezado/logo_ciencias.jpg" width="400"></p>
+<p align="center"><img src="http://computacion.ciens.ucv.ve/escueladecomputacion/img/layout_publico/encabezado/logo_ciencias.jpg" width="100"></p>
 
 ## Laboratorio 1
 
