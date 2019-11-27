@@ -2,7 +2,7 @@
 
 @extends('layout')      
 
-@section('title','Crear')
+@section('title',trans('sentences.Create'))
 
 @section('content')
 <section>
@@ -14,12 +14,12 @@
         @endif
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
-                <h1 class="display-4 text-center">{{ trans('sentences.formTitle')}}</h1>
+                <h1 class="display-4 text-center">{{ trans('sentences.Create')}}</h1>
                 <div class="info-form">
                     <form method="post" action="{{ route('create.store')}}" class="form-inlin justify-content-center text-left">
                         @csrf
                         <div class="form-group">
-                            <label for="Nombre">Nombre:</label>
+                            <label for="Nombre">{{ trans('sentences.Name')}}:</label>
                             <input type="text" class="form-control" name="Nombre" placeholder="Jane"/>
                             @if ($errors->has('Nombre'))
                                 <ul class="alert alert-danger">
@@ -30,7 +30,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="Apellido">Apellido:</label>
+                            <label for="Apellido">{{ trans('sentences.LName')}}:</label>
                             <input type="text" class="form-control" name="Apellido" placeholder="Doe"/>
                             @if ($errors->has('Apellido'))
                             <ul class="alert alert-danger">
@@ -41,7 +41,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="Email">Email:</label>
+                            <label for="Email">{{ trans('sentences.Email')}}:</label>
                             <input type="text" class="form-control" name="Email" placeholder="jane.doe@gmail.com"/>
                             @if ($errors->has('Email'))
                                 <ul class="alert alert-danger">
@@ -52,7 +52,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="Cedula">Cédula:</label>
+                            <label for="Cedula">{{trans('sentences.userID')}}:</label>
                             <input type="text" class="form-control" name="Cedula" placeholder="12345678"/>
                             @if ($errors->has('Cedula'))
                                 <ul class="alert alert-danger">
@@ -63,11 +63,11 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <label for="Genero">Género:</label>
+                            <label for="Genero">{{trans('sentences.Gender')}}:</label>
                             <select name="Genero" class="form-control  col-md-5" id="Genero">
-                                <option value="">Selecciona tu género</option>
-                                <option value="0">Masculino</option>
-                                <option value="1">Femenino</option>
+                                <option value="">{{trans('sentences.Gender-placeholder')}}</option>
+                                <option value="0">{{trans('sentences.Gender-Male')}}</option>
+                                <option value="1">{{trans('sentences.Gender-Female')}}</option>
                             </select>
                             @if ($errors->has('Genero'))
                                 <ul class="alert alert-danger">
@@ -78,7 +78,7 @@
                             @endif
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success ">Crear</button>
+                            <button type="submit" class="btn btn-success ">{{trans('sentences.Submit')}}</button>
                         </div>
                     </form>
                 </div>

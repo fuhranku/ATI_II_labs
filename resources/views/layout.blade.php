@@ -26,7 +26,7 @@
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Laboratorio 1</a>
+        <a class="navbar-brand" href="#">{{trans('sentences.navbar-title')}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,12 +50,12 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Idioma 
+                        {{trans('sentences.navbar-lang')}} 
                         </button>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <a class="{{ $locale=='es' ? 'dropdown-item active' : 'dropdown-item' }}" href="lang/es"> <object type="image/svg+xml" data="{{asset('img/es.svg')}}" class="icon-flag"></object> Español</a>
-                            <a class="{{ $locale=='en' ? 'dropdown-item active' : 'dropdown-item' }}" href="lang/en"> <object type="image/svg+xml" data="{{asset('img/en.svg')}}" class="icon-flag"></object> Inglés</a>
+                            <a class="{{ $locale=='es' ? 'dropdown-item active' : 'dropdown-item' }}" href="lang/es"> <object type="image/svg+xml" data="{{asset('img/es.svg')}}" class="icon-flag"></object> {{trans('sentences.navbar-lang-ES')}}</a>
+                            <a class="{{ $locale=='en' ? 'dropdown-item active' : 'dropdown-item' }}" href="lang/en"> <object type="image/svg+xml" data="{{asset('img/en.svg')}}" class="icon-flag"></object> {{trans('sentences.navbar-lang-EN')}}</a>
                         </div>
                     </div>
                 </li>

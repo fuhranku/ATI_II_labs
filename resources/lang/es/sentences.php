@@ -9,18 +9,27 @@
     |
     */
     return [
-        'formTitle' => 'Crear',
-        'Nombre' => 'Name',
-        'Apellido' => 'Last name',
-        'Email' => 'Email',
-        'Cedula' => 'Personal ID',
-        'Genero' => 'Gender',
-        'selChoice' => 'Select your gender',
-        'Masc' => 'Male',
-        'Fem' => 'Female',
-        'Submit' => 'Submit',
+        // General
         'Create' => 'Crear',
         'Read'=> 'Leer',
         'Update' => 'Actualizar',
-        'Delete' => 'Eliminar'
+        'Delete' => 'Eliminar',
+        //Layout
+        'navbar-title' => 'Laboratorio 1',
+        'navbar-lang' => 'Idioma',
+        'navbar-lang-ES' => 'Español',
+        'navbar-lang-EN' => 'Inglés',
+        // User Description
+        'Name' => 'Nombre',
+        'LName' => 'Apellido',
+        'Email' => 'Email',
+        'userID' => 'Cédula',
+        'Gender' => 'Género',
+        'Gender-placeholder' => 'Selecciona tu género :)',
+        'Gender-Male' => 'Masculino',
+        'Gender-Female' => 'Femenino',
+        'Submit' => 'Enviar',
+        // Update window
+        'Submit-Update' => 'Actualizar',
+        'Button-Edit' => 'Editar',
     ];
