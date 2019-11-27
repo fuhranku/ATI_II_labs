@@ -1,9 +1,12 @@
 @extends('layout')
 
-@section('title','Delete')
+@section('title','Eliminar')
 
 @section('content')
 <div class="row content-table delete">
+    <div class="col-sm-6 offset-sm-3 scale-08">
+        <h1 class="display-4 text-center">Eliminar</h1>
+    </div>
         <div class="col-sm-10 offset-sm-1">
 <table class="table">
     <thead>

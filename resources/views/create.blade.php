@@ -2,11 +2,11 @@
 
 @extends('layout')      
 
-@section('title','Create')
+@section('title','Crear')
 
 @section('content')
 <section>
-    <div class="create">
+    <div class="scale-08">
         @if (isset($submitState))
             @if ($submitState == 1)
                 @yield('modal')
@@ -14,7 +14,7 @@
         @endif
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
-                <h1 class="display-4 text-center">Create</h1>
+                <h1 class="display-4 text-center">{{ trans('sentences.formTitle')}}</h1>
                 <div class="info-form">
                     <form method="post" action="{{ route('create.store')}}" class="form-inlin justify-content-center text-left">
                         @csrf

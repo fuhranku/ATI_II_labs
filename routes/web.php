@@ -29,3 +29,6 @@ Route::get('read', 'FormController@read')->name('read.update');
 Route::get('delete', 'FormController@getdelete')->name('delete.getdelete');
 
 Route::delete('delete/{id}','FormController@delete')->name('delete.delete');
+
+// Localization
+Route::get('lang/{locale}', 'UserController@lang');

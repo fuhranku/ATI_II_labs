@@ -1,6 +1,6 @@
 @extends('layout')   
 
-@section('title','Update')
+@section('title','Actualizar')
 
 @section('content')
 
@@ -89,8 +89,13 @@
     </div>
 </div>
 
+
+
 <div class="row content-table update">
-        <div class="col-sm-10 offset-sm-1">
+    <div class="col-sm-6 offset-sm-3 scale-08">
+        <h1 class="display-4 text-center">Actualizar</h1>
+    </div>
+    <div class="col-sm-10 offset-sm-1">
 <table class="table">
     <thead>
       <tr>
