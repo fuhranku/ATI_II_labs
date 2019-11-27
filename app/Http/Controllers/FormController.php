@@ -32,7 +32,7 @@ class FormController extends Controller
             $userC = \App\Form::find($request->input("id"));
             $validatedData = Validator::make($request->all(), [
                 'Nombre' => 'required|alpha|max:255',
-                'Apellido' => 'required|max:255',
+                'Apellido' => 'required|alpha|max:255',
                 'Email' => 'required|email|max:255',
                 'Cedula' => 'required|numeric|digits:8',
                 'Genero' => 'required',
@@ -76,7 +76,7 @@ class FormController extends Controller
     {
         $validatedData = Validator::make($request->all(), [
             'Nombre' => 'required|alpha|max:255',
-            'Apellido' => 'required|max:255',
+            'Apellido' => 'required|alpha|max:255',
             'Email' => 'required|email|max:255',
             'Cedula' => 'required|numeric|digits:8',
             'Genero' => 'required',

@@ -1,22 +1,22 @@
 @extends('layout')
 
-@section('title','Eliminar')
+@section('title',trans('sentences.Delete'))
 
 @section('content')
 <div class="row content-table delete">
     <div class="col-sm-6 offset-sm-3 scale-08">
-        <h1 class="display-4 text-center">Eliminar</h1>
+        <h1 class="display-4 text-center">{{ trans('sentences.Delete')}}</h1>
     </div>
         <div class="col-sm-10 offset-sm-1">
 <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Email</th>
-        <th scope="col">Cédula</th>
-        <th scope="col">Género</th>
+        <th scope="col">{{ trans('sentences.Name')}}</th>
+        <th scope="col">{{ trans('sentences.LName')}}</th>
+        <th scope="col">{{ trans('sentences.Email')}}</th>
+        <th scope="col">{{ trans('sentences.userID')}}</th>
+        <th scope="col">{{ trans('sentences.Gender')}}</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -30,12 +30,12 @@
         <td>{{$user->Cedula}}</td>
         <td>
             @if ($user->Genero == 0)
-                Masculino
+                {{ trans('sentences.Gender-Male')}}
             @else
-                Femenino
+                {{ trans('sentences.Gender-Female')}}
             @endif
         </td>
-        <td><button type="button" class="btn btn-danger delete-btn " data-id = "{{$user->id}}" data-token="{{csrf_token()}}">Eliminar</button></td>
+        <td><button type="button" class="btn btn-danger delete-btn " data-id = "{{$user->id}}" data-token="{{csrf_token()}}">{{ trans('sentences.Button-Delete')}}</button></td>
         </tr>
         @endforeach
     </tbody>
